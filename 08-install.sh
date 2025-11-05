@@ -33,7 +33,7 @@ dnf list installed mysql
 
 if [ $? -eq 1 ]
 then 
-    dnf install mysql -y
+    dnf install mysqlbbbh -y
     if [ $? -eq 0 ]
     then 
        echo "mysql installed successfully"
