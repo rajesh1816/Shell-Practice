@@ -14,3 +14,18 @@ fi
 
 dnf list installed nginx
 
+if [ $? -eq 1 ]
+then 
+    dnf install nginx -y
+    if [ $? -eq 0 ]
+    then 
+       echo "installed successfully"
+    else
+       echo "installation failed"
+       exit 1
+else 
+    echo "nginx already installed"
+fi
+
+
+       
