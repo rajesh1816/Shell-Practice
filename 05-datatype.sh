@@ -6,7 +6,7 @@ NUMBER2=200
 
 MOVIES=("court" , "og" , "k-ramp" , "bahubali")
 
-echo "$(MOVIES[0])"
+echo "${MOVIES[0]}"
 
 echo "$TIMESTAMP"
 
