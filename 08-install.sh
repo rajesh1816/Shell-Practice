@@ -23,6 +23,7 @@ then
     else
        echo "installation failed"
        exit 1
+    fi
 else 
     echo "nginx already installed"
 fi
