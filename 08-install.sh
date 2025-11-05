@@ -10,8 +10,6 @@ else
    exit 1
 fi
 
-
-
 dnf list installed nginx
 
 if [ $? -eq 1 ]
@@ -27,6 +25,9 @@ then
 else 
     echo "nginx already installed"
 fi
+
+dnf list installed mysql
+
 
 
        
