@@ -12,3 +12,5 @@ fi
 
 
 
+dnf list installed nginx
+
