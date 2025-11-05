@@ -7,3 +7,4 @@ then
    echo "you are running as a root"
 else
    echo "non-root user"
+fi
