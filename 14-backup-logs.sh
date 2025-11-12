@@ -68,6 +68,8 @@ TIMESTAMP=$(date +"%y%m%d_%H%M%S")
 ZIP_NAME=$(logs_backup_"$TIMESTAMP".zip)
 ZIP_PATH="/tmp/ZIP_NAME"
 
+mkdir -p /tmp/ZIP_PATH
+
 echo "zipping the files"
 
 find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_PATH"
