@@ -55,7 +55,7 @@ fi
 
 LOG_FILES=$(find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS")
 
-echo $LOG_FILES '\n'
+echo $LOG_FILES 
 
 if [ -z "$LOG_FILES" ]
 then 
