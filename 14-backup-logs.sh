@@ -74,7 +74,7 @@ find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_FILE"
 
 #step8: moving files to dest dir
 
-mv "ZIP_FILE" "/home/ec2-user/Shell-Practice/dest-dir"
+mv "$ZIP_FILE" "/home/ec2-user/Shell-Practice/dest-dir"
 
 if [ $? -ne 0 ]
 then 
