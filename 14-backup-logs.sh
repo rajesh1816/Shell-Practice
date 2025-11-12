@@ -65,14 +65,14 @@ fi
 #step7: zip the files
 
 TIMESTAMP=$(date +"%y%m%d_%H%M%S")
-ZIP_NAME="logs_backup_"$TIMESTAMP".zip"
-ZIP_PATH="/tmp/ZIP_NAME"
+ZIP_NAME=$("logs_backup-"$TIMESTAMP".zip")
+ZIP_FOLDER="/tmp/ZIP_NAME"
 
-mkdir -p /tmp/ZIP_PATH
+mkdir -p /tmp/ZIP_FOLDER
 
 echo "zipping the files"
 
-find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_PATH"
+find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_FOLDER"
 
 #step8: moving files to dest dir
 
@@ -86,7 +86,7 @@ fi
 
 #step9: verify dest dir zip files exist or not
 
-if [ -f $DEST_DIR/$ZIP_NAME ]
+if [ -f $DEST_DIR/$ZIP_FOLDER ]
 then 
     echo "backup successful"
     while IFS= read -r line
