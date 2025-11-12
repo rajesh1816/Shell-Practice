@@ -55,6 +55,8 @@ fi
 
 LOG_FILES=$(find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS")
 
+echo $LOG_FILES
+
 if [ -z "$LOG_FILES" ]
 then 
     echo "no log files found older than $DAYS days"
@@ -65,16 +67,12 @@ fi
 #step7: zip the files
 
 TIMESTAMP=$(date +"%y%m%d_%H%M%S")
-ZIP_FILE="/tmp/backup-logs-$TIMESTAMP.zip"
+ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
 
 
 echo "zipping the files"
 
 find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_FILE"
-
-#step8: moving files to dest dir
-
-mv "$ZIP_FILE" "/home/ec2-user/Shell-Practice/dest-dir"
 
 if [ $? -ne 0 ]
 then 
