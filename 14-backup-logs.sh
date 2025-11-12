@@ -55,7 +55,7 @@ fi
 
 LOG_FILES=$(find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS")
 
-if [ -z $LOG_FILES ]
+if [ -z "$LOG_FILES" ]
 then 
     echo "no log files found older than $DAYS days"
     exit 0
