@@ -30,7 +30,7 @@ DAYS="${3:-14}" #default 14 days if user not provide days
 
 #step3: checking user is passing atleast 2 arguments while excuting the script
 
-if [ $# -le 2 ]
+if [ $# -lt 2 ]
 then 
      usage
 fi 
