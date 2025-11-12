@@ -8,3 +8,5 @@ then
 else
   echo "$NUMBER is equals to 10"
 fi 
+
+
