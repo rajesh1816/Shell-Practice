@@ -72,11 +72,11 @@ mkdir -p /tmp/ZIP_PATH
 
 echo "zipping the files"
 
-find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "/tmp/$ZIP_PATH"
+find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_PATH"
 
 #step8: moving files to dest dir
 
-mv "/tmp/ZIP_PATH" "/home/ec2-user/Shell-Practice/dest-dir"
+mv "ZIP_PATH" "/home/ec2-user/Shell-Practice/dest-dir"
 
 if [ $? -ne 0 ]
 then 
