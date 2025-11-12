@@ -67,7 +67,7 @@ fi
 TIMESTAMP=$(date +"%y%m%d_%H%M%S")
 ZIP_FILE="tmp/zip-files/backup-logs-$TIMESTAMP.zip"
 
-mkdir -p /tmp/ZIP_FOLDER
+mkdir -p /tmp/zip-files
 
 echo "zipping the files"
 
