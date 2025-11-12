@@ -72,7 +72,7 @@ mkdir -p /tmp/ZIP_PATH
 
 echo "zipping the files"
 
-find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_PATH"
+find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "/tmp/$ZIP_PATH"
 
 #step8: moving files to dest dir
 
