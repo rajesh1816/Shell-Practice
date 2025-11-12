@@ -1,8 +1,6 @@
 #!/bin/bash
 
-movies=$@
-
-while i in line
-do 
-     $line
-done < $movies
+while IFS= read -r line
+do
+     echo $line
+done < 12-set.sh
