@@ -65,7 +65,7 @@ fi
 #step7: zip the files
 
 TIMESTAMP=$(date +"%y%m%d_%H%M%S")
-ZIP_NAME=$(logs_backup_"$TIMESTAMP".zip)
+ZIP_NAME=logs_backup_"$TIMESTAMP".zip
 ZIP_PATH="/tmp/ZIP_NAME"
 
 mkdir -p /tmp/ZIP_PATH
