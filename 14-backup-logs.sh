@@ -65,18 +65,17 @@ fi
 #step7: zip the files
 
 TIMESTAMP=$(date +"%y%m%d_%H%M%S")
-ZIP_NAME=$("logs_backup-"$TIMESTAMP".zip")
-ZIP_FOLDER="/tmp/ZIP_NAME"
+ZIP_FILE="tmp/zip-files/backup-logs-$TIMESTAMP.zip"
 
 mkdir -p /tmp/ZIP_FOLDER
 
 echo "zipping the files"
 
-find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_FOLDER"
+find "$SOURCE_DIR" -type f -name "*.log" -mtime +"$DAYS" | zip -@ "$ZIP_FILE"
 
 #step8: moving files to dest dir
 
-mv "ZIP_PATH" "/home/ec2-user/Shell-Practice/dest-dir"
+mv "ZIP_FILE" "/home/ec2-user/Shell-Practice/dest-dir"
 
 if [ $? -ne 0 ]
 then 
@@ -86,7 +85,7 @@ fi
 
 #step9: verify dest dir zip files exist or not
 
-if [ -f $DEST_DIR/$ZIP_FOLDER ]
+if [ -f $DEST_DIR/$ZIP_FILE ]
 then 
     echo "backup successful"
     while IFS= read -r line
