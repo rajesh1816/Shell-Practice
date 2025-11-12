@@ -82,7 +82,7 @@ fi
 
 #step9: verify dest dir zip files exist or not
 
-if [ -f $DEST_DIR/$ZIP_FILE ]
+if [ -f $ZIP_FILE ]
 then 
     echo "backup successful"
     while IFS= read -r line
